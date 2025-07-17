@@ -18,8 +18,13 @@
         </p>
     {% endif %}
 
-    <a href="#" class="inline-block mt-12 px-6 py-3 text-lg font-semibold bg-blue-500 text-white rounded-xl hover:bg-blue-300">Request a Quotaion</a>
-    <a href="{% url 'index' %}" class="inline-block mt-12 px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-300">Return to Home Page</a>
+        <div class="flex items-center space-x-2">
+          <label class="text-gray-700 px-4 py-8"><strong>Quantity:</strong></label>
+          <input type="number" class="w-20 border border-gray-300 px-2 py-1 rounded" value="1" min="1" />
+        </div>
+
+    <a href="#" class="inline-block mt-12 px-6 py-3 text-lg font-semibold bg-blue-500 text-white rounded-xl hover:bg-blue-300 w-64 text-center">Add to Quotation</a>
+    <a href="{% url 'item:browse' %}" class="inline-block mt-12 px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-300 w-64 text-center">Return to Store Page</a>
   </div>
 </div>
 {% endblock %}
