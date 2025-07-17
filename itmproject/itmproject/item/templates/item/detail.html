@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{ item.name }{% endblock %}
+
+{% block content %}
+<div class="grid grid-cols-5 gap-6 max-w-4xl mx-auto">
+  <div class="col-span-3">
+    <img src="{{ item.image.url }}" class="w-full max-w-md mx-auto">
+  </div>
+
+  <div class="col-span-2 p-4 bg-blue-200 text-center">
+    <h1 class="mb-4 text-xl font-semibold">{{ item.name }}</h1>
+    <p class="text-base text-black"><strong>Price: </strong>{{ item.price }}</p>
+
+    {% if item.description %}
+        <p class="text-base text-gray-700 text-left mt-8 px-4">
+            {{ item.description }}
+        </p>
+    {% endif %}
+
+    <a href="#" class="inline-block mt-12 px-6 py-3 text-lg font-semibold bg-blue-500 text-white rounded-xl hover:bg-blue-300">Request a Quotaion</a>
+    <a href="{% url 'index' %}" class="inline-block mt-12 px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-300">Return to Home Page</a>
+  </div>
+</div>
+{% endblock %}
