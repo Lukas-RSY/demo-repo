@@ -10,7 +10,7 @@
         {% csrf_token %}
 
         <div class="mb-3">
-            <label class="inline-block mb-2">Username</label><br>
+            <label class="inline-block mb-2">Username (No spaces)</label><br>
             {{ form.username }}
         </div>
 
@@ -20,7 +20,7 @@
         </div>
 
         <div class="mb-3">
-            <label class="inline-block mb-2">Password</label><br>
+            <label class="inline-block mb-2">Password (min. 8 characters, must have at least 1 letter, ensure password is not too common or similar to your personal detials)</label><br>
             {{ form.password1 }}
         </div>
 
@@ -39,7 +39,9 @@
             </div>
         {% endif %}
 
-        <button class="py-4 px-8 text-lg bg-teal-500 hover:bg-teal-700 rounded-xl text-white">Submit</button>
+        <button class="py-4 px-8 text-lg bg-blue-500 hover:bg-blue-300 rounded-xl text-white">Submit</button>
     </form>
+
+    <a href="{% url 'core:login' %}" class="mt-4 inline-block py-4 px-8 text-lg bg-gray-500 text-white rounded-xl hover:bg-gray-400">Log In to Existing Account</a>
 </div>
 {% endblock %}

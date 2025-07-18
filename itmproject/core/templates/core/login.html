@@ -29,7 +29,17 @@
             </div>
         {% endif %}
 
-        <button class="py-4 px-8 text-lg bg-blue-500 hover:bg-blue-300 rounded-xl text-white">Submit</button>
+        <div class="mt-6 space-y-4">
+            <button class="py-4 px-8 text-lg bg-blue-500 hover:bg-blue-300 rounded-xl text-white">
+                Submit
+            </button>
+
+            <p class="text-gray-600 font-medium">or</p>
+
+            <a href="{% url 'core:signup' %}" class="inline-block py-4 px-8 text-lg bg-gray-500 text-white rounded-xl text-center hover:bg-gray-400">
+                Create an Account
+            </a>
+        </div>
     </form>
 </div>
 {% endblock %}

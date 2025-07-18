@@ -4,6 +4,8 @@ from item.models import Category, Item
 
 from .forms import SignupForm
 
+from django.contrib.auth import logout
+
 def index(request):
     items = Item.objects.all()[0:3]
     categories = Category.objects.all()
@@ -27,6 +29,9 @@ def signup(request):
 		'form': form
 	})
 
+def logout_view(request):
+    logout(request)
+    return redirect('core:index')
 
 def contact(request):
     return render(request, 'core/contact.html')
